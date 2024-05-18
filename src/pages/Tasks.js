@@ -1,7 +1,7 @@
 import React from 'react';
 import TaskList from '../components/TaskList';
 
-const Home = () => {
+const Tasks = () => {
   const tasks = [
     { id: 1, title: 'Survey Task', description: 'Complete a survey and earn points.', image: 'https://od.lk/s/NjFfODI4MTUwOTZf/person%20survey.jpeg' },
     { id: 2, title: 'Watch Video', description: 'Watch a short video and earn points.', image: 'https://od.lk/s/NjFfODI4MTUxMDhf/person%20watch.jpg' },
@@ -10,17 +10,10 @@ const Home = () => {
 
   return (
     <div className="container mt-5">
-      <div className="jumbotron bg-light">
-        <h1 className="display-4">Welcome to Cuan</h1>
-        <p className="lead">Earn rewards by completing simple tasks!</p>
-        <hr className="my-4" />
-        <p>Sign up now and start earning points.</p>
-        <a className="btn btn-primary btn-lg" href="/login" role="button">Sign Up</a>
-      </div>
-      <h2 className="mb-4">Available Tasks</h2>
+      <h1 className="mb-4">Available Tasks</h1>
       <TaskList tasks={tasks} />
     </div>
   );
 };
 
-export default Home;
+export default Tasks;

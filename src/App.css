@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-h1 {
+h1, h2, h5 {
   color: #333;
 }
 
@@ -20,4 +20,22 @@ main {
 
 footer p {
   margin: 0;
+}
+
+.jumbotron {
+  color: rgb(20, 18, 18);
+}
+
+#sidebar-wrapper {
+  width: 250px;
+  height: 100%;
+}
+
+.sidebar-heading {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.list-group-item {
+  padding: 1rem 1.5rem;
 }
