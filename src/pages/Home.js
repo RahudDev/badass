@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="mb-4">Welcome to Earn cuan</h1>
+      <h1 className="mb-4">Welcome to survey site cuan</h1>
       <PostList posts={posts} />
     </div>
   );
