@@ -7,7 +7,7 @@ const Post = ({ post }) => {
       <div className="card-body">
         <h2 className="card-title">{post.title}</h2>
         <p className="card-text">{post.excerpt}</p>
-        <Link to={`/post/${post.id}`} className="btn btn-primary">Read More</Link>
+        <Link to={`/post/${post.id}`} className="btn btn-primary">Pelajari selanjutnya</Link>
       </div>
     </div>
   );
