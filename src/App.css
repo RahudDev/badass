@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
+.nav-link {
+  font-weight: bold;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+footer p {
+  margin: 0;
+}
