@@ -35,7 +35,3 @@ Contributions are welcome! If you find any bugs or have suggestions for new feat
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize this README according to your project's specific requirements and features!
