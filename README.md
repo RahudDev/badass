@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# GPT Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Cuan - a platform where you can earn rewards by completing simple tasks!
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To get started with Cuan Site, follow these steps:
 
-### `npm start`
+1. **Sign Up**: Click on the `Sign Up` button on the homepage to create an account. If you already have an account, you can directly log in.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Explore Tasks**: Once logged in, explore the available tasks by clicking on the `Tasks` link in the navigation bar. You'll find a variety of tasks such as surveys, watching videos, and more.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Earn Points**: Complete tasks to earn points. The more tasks you complete, the more points you earn.
 
-### `npm test`
+4. **Redeem Rewards**: Accumulate points and redeem them for exciting rewards available on the platform.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- **Task Listings**: Browse through a list of available tasks with descriptions and images.
+- **User Profile**: View your profile to see your points balance and account details.
+- **Responsive Design**: The site is fully responsive, ensuring a seamless experience across devices.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React.js
+- React Router DOM
+- Bootstrap
+- HTML
+- CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+Contributions are welcome! If you find any bugs or have suggestions for new features, please create an issue or submit a pull request.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

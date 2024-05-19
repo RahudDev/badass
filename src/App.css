@@ -23,7 +23,7 @@ footer p {
 }
 
 .jumbotron {
-  color: rgb(20, 18, 18);
+  color: rgb(19, 18, 18);
 }
 
 #sidebar-wrapper {
@@ -38,4 +38,29 @@ footer p {
 
 .list-group-item {
   padding: 1rem 1.5rem;
+}
+
+/* Landing Page Styles */
+.landing-page {
+  color: rgb(8, 8, 8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.landing-page .container {
+  text-align: center;
+}
+
+.landing-page .display-4 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing-page .lead {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.landing-page .btn-primary {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
 }

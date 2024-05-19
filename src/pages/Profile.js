@@ -2,7 +2,7 @@ import React from 'react';
 import UserProfile from '../components/UserProfile';
 
 const Profile = () => {
-  const user = { name: 'John Doe', email: 'john.doe@example.com', points: 120 };
+  const user = { name: 'John Doe', email: 'john.doe@example.com', points: 150 };
 
   return (
     <div className="container mt-5">
