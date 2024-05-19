@@ -7,7 +7,7 @@ const Dashboard = () => {
         <div className="col-md-3">
           <div className="card shadow-sm">
             <div className="card-body text-center">
-              <img src="https://od.lk/s/NjFfODI4MjEyODZf/pngtree-cool-glass-profile-emoji-png-image_14132428.png" alt="Profile" className="img-fluid rounded-circle mb-3" />
+              <img src="https://od.lk/s/NjFfODI4MjEzNjhf/SmilingEmojiSunglasses.jpg" alt="Profile" className="img-fluid rounded-circle mb-3" />
               <h5 className="card-title">Welcome, User!</h5>
               <p className="card-text">Points: 150</p>
               <a href="#/profile" className="btn btn-primary btn-sm">View Profile</a>
