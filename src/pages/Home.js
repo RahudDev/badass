@@ -15,7 +15,7 @@ const Home = () => {
         <p className="lead">Earn rewards by completing simple tasks!</p>
         <hr className="my-4" />
         <p>Sign up now and start earning points.</p>
-        <a className="btn btn-primary btn-lg" href="/login" role="button">Sign Up</a>
+        <a className="btn btn-primary btn-lg" href="#/login" role="button">Sign Up</a>
       </div>
       <h2 className="mb-4">Available Tasks</h2>
       <TaskList tasks={tasks} />
