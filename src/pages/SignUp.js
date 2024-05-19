@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Login = ({ setIsLoggedIn }) => {
+const SignUp = ({ setIsLoggedIn }) => {
   const [formData, setFormData] = useState({
+    username: '',
     email: '',
     password: ''
   });
@@ -18,7 +19,7 @@ const Login = ({ setIsLoggedIn }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic
-    // After successful login, set user as logged in and redirect to the dashboard
+    // After successful sign-up, set user as logged in and redirect to the dashboard
     setIsLoggedIn(true);
     navigate('/dashboard');
   };
@@ -26,8 +27,23 @@ const Login = ({ setIsLoggedIn }) => {
   return (
     <div className="container d-flex justify-content-center align-items-center min-vh-100">
       <div className="card p-4 shadow-lg" style={{ maxWidth: '500px', width: '100%' }}>
-        <h2 className="text-center mb-4">Welcome back, Friend!</h2>
+        <h2 className="text-center mb-4">Join Cuan badass</h2>
+        <p className="text-center text-muted mb-4">
+          Sign up today and start earning rewards by completing simple tasks!
+        </p>
         <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="username" className="form-label">Username</label>
+            <input 
+              type="text" 
+              className="form-control" 
+              id="username" 
+              name="username" 
+              value={formData.username}
+              onChange={handleChange}
+              required 
+            />
+          </div>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">Email address</label>
             <input 
@@ -52,11 +68,11 @@ const Login = ({ setIsLoggedIn }) => {
               required 
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100">Log In</button>
+          <button type="submit" className="btn btn-primary w-100">Sign Up</button>
         </form>
         <div className="mt-4 text-center">
           <p className="text-muted">
-            Don't have an account? <a href="#/signup">Sign up</a>
+            Already have an account? <a href="#/login">Log in</a>
           </p>
         </div>
       </div>
@@ -64,4 +80,4 @@ const Login = ({ setIsLoggedIn }) => {
   );
 };
 
-export default Login;
+export default SignUp;
