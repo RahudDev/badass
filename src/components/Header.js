@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Header = ({ userPoints, isLoggedIn, userName, onLogout }) => {
+const Header = ({ userPoints, userName, onLogout }) => {
   const navigate = useNavigate();
+  const isLoggedIn = !!userName;
 
   const handleLogout = () => {
     onLogout();
@@ -19,39 +20,38 @@ const Header = ({ userPoints, isLoggedIn, userName, onLogout }) => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link className="nav-link" to={isLoggedIn ? "/dashboard" : "/home"}>{isLoggedIn ? "Dashboard" : "Home"}</Link>
-            </li>
+              <Link className="nav-link text-white" to={isLoggedIn ? "/dashboard" : "/home"}>{isLoggedIn ? "Dashboard" : "Home"}</Link>
+            </li> &nbsp;
             <li className="nav-item">
-              <Link className="nav-link" to="/tasks">Tasks</Link>
-            </li>
+              <Link className="nav-link text-white" to="/tasks">Tasks</Link>
+            </li> &nbsp;&nbsp;
             <li className="nav-item">
-              <Link className="nav-link" to="/profile">Profile</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
-            </li>
-            {!isLoggedIn && (
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">Login</Link>
-              </li>
-            )}
+              <Link className="nav-link text-white" to="/about">About Us</Link>
+            </li> &nbsp;&nbsp;
             {isLoggedIn && (
               <>
-                <li className="nav-item">
+              <li className="nav-item">
                   <span className="navbar-text text-white">
-                    Welcome, {userName}
+                    Cuan : {userPoints}
                   </span>
-                </li>
-                <li className="nav-item">
-                  <button className="btn btn-link nav-link" onClick={handleLogout}>Logout</button>
+                </li> &nbsp;&nbsp;
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle text-white" href="#/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Welcome,{userName}!
+                  </a>
+                  <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <Link className="dropdown-item" to="/profile">Profile</Link>
+                    <div className="dropdown-divider"></div>
+                    <button className="dropdown-item" onClick={handleLogout}>Logout</button>
+                  </div>
                 </li>
               </>
             )}
-            <li className="nav-item">
-              <span className="navbar-text text-white">
-                Points: {userPoints}
-              </span>
-            </li>
+            {!isLoggedIn && (
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

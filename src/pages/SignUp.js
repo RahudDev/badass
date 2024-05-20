@@ -15,7 +15,7 @@ const SignUp = ({ onLogin }) => {
     // Save user info to local storage
     localStorage.setItem('userName', formData.name);
     localStorage.setItem('userEmail', formData.email);
-    localStorage.setItem('userPoints', 150); // Example initial points
+    localStorage.setItem('userPoints', 500); // Example initial points
     // Call onLogin with user name
     onLogin(formData.name);
     navigate('/dashboard'); // Redirect to dashboard after sign up

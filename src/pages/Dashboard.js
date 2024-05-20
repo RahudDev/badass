@@ -6,7 +6,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const storedUserName = localStorage.getItem('userName');
-    const storedUserPoints = localStorage.getItem('userPoints') || 0; // Default to 0 if not found
+    const storedUserPoints = localStorage.getItem('userPoints') || 500; // Default to 0 if not found
     if (storedUserName) {
       setUserName(storedUserName);
       setUserPoints(storedUserPoints);
@@ -21,7 +21,7 @@ const Dashboard = () => {
             <div className="card-body text-center">
               <img src="https://od.lk/s/NjFfODI4MjEzNjhf/SmilingEmojiSunglasses.jpg" alt="Profile" className="img-fluid rounded-circle mb-3" />
               <h5 className="card-title">Welcome, {userName}!</h5>
-              <p className="card-text">Points: {userPoints}</p>
+              <p className="card-text">Cuan : {userPoints}</p>
               <a href="#/profile" className="btn btn-primary btn-sm">View Profile</a>
             </div>
           </div>

@@ -14,51 +14,47 @@ import LandingPage from './pages/LandingPage';
 import './App.css';
 
 const App = () => {
-  const [userPoints, setUserPoints] = useState(150); // Example points
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage logged-in state
-  const [userName, setUserName] = useState(''); // Manage user's name
+  const [userName, setUserName] = useState('');
+  const [userPoints, setUserPoints] = useState(500);
 
   useEffect(() => {
-    // Check local storage for logged-in state and user info
-    const storedIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const storedUserName = localStorage.getItem('userName');
-
-    if (storedIsLoggedIn && storedUserName) {
-      setIsLoggedIn(true);
+    const storedUserPoints = localStorage.getItem('userPoints') || 500;
+    if (storedUserName) {
       setUserName(storedUserName);
+      setUserPoints(storedUserPoints);
     }
   }, []);
 
-  const handleLogin = (name) => {
-    setIsLoggedIn(true);
-    setUserName(name);
-    localStorage.setItem('isLoggedIn', 'true');
-    localStorage.setItem('userName', name);
+  const handleLogin = (userName) => {
+    setUserName(userName);
+    setUserPoints(localStorage.getItem('userPoints') || 500);
+    localStorage.setItem('userName', userName); // Store the userName for future visits
   };
 
   const handleLogout = () => {
-    setIsLoggedIn(false);
-    setUserName('');
-    localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('userName');
+    localStorage.removeItem('userPoints');
+    setUserName('');
+    setUserPoints(0);
   };
 
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">
-        <Header userPoints={userPoints} isLoggedIn={isLoggedIn} userName={userName} onLogout={handleLogout} />
+        <Header userName={userName} userPoints={userPoints} onLogout={handleLogout} />
         <main className="flex-grow-1">
           <Routes>
-            <Route path="/" element={<Navigate to="/badass" />} />
-            <Route path="/badass" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/tasks" element={<Tasks />} />
             <Route path="/tasks/:id" element={<TaskDetail />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/login" element={<Login onLogin={handleLogin} />} />
+            <Route path="/tasks" element={<Tasks />} />
             <Route path="/signup" element={<SignUp onLogin={handleLogin} />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/login" element={<Login onLogin={handleLogin} />} />
+            <Route path="/profile" element={<Profile userName={userName} />} />
+            <Route path="/dashboard" element={<Dashboard userName={userName} />} />
+            <Route path="/badass" element={userName ? <Navigate to="/dashboard" /> : <LandingPage />} />
+            <Route path="/" element={userName ? <Navigate to="/dashboard" /> : <LandingPage />} />
           </Routes>
         </main>
         <Footer />
