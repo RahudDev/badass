@@ -21,7 +21,7 @@ const Dashboard = () => {
             <div className="card-body text-center">
               <img src="https://od.lk/s/NjFfODI4MjEzNjhf/SmilingEmojiSunglasses.jpg" alt="Profile" className="img-fluid rounded-circle mb-3" />
               <h5 className="card-title">Welcome, {userName}!</h5>
-              <p className="card-text">Cuan : {userPoints}</p>
+              <p className="card-text">$CUAN : {userPoints}</p>
               <a href="#/profile" className="btn btn-primary btn-sm">View Profile</a>
             </div>
           </div>

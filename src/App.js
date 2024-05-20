@@ -11,7 +11,9 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import LandingPage from './pages/LandingPage';
+import SurveyTasks from './pages/SurveyTasks';
 import './App.css';
+import 'animate.css';
 
 const App = () => {
   const [userName, setUserName] = useState('');
@@ -35,6 +37,7 @@ const App = () => {
   const handleLogout = () => {
     localStorage.removeItem('userName');
     localStorage.removeItem('userPoints');
+    localStorage.removeItem('userEmail');
     setUserName('');
     setUserPoints(0);
   };
@@ -49,6 +52,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/tasks/:id" element={<TaskDetail />} />
             <Route path="/tasks" element={<Tasks />} />
+            <Route path="/survey-tasks" element={<SurveyTasks />} />
             <Route path="/signup" element={<SignUp onLogin={handleLogin} />} />
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
             <Route path="/profile" element={<Profile userName={userName} />} />

@@ -13,11 +13,12 @@ const SignUp = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Save user info to local storage
-    localStorage.setItem('userName', formData.name);
+    localStorage.setItem('userFullName', formData.name);
     localStorage.setItem('userEmail', formData.email);
     localStorage.setItem('userPoints', 500); // Example initial points
-    // Call onLogin with user name
-    onLogin(formData.name);
+    // Extract first name and call onLogin with first name
+    const firstName = formData.name.split(' ')[0];
+    onLogin(firstName);
     navigate('/dashboard'); // Redirect to dashboard after sign up
   };
 

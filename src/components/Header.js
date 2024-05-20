@@ -10,6 +10,8 @@ const Header = ({ userPoints, userName, onLogout }) => {
     navigate('/badass'); // Redirect to landing page
   };
 
+  const firstName = userName ? userName.split(' ')[0] : '';
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
@@ -21,7 +23,7 @@ const Header = ({ userPoints, userName, onLogout }) => {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link className="nav-link text-white" to={isLoggedIn ? "/dashboard" : "/home"}>{isLoggedIn ? "Dashboard" : "Home"}</Link>
-            </li> &nbsp;
+            </li> &nbsp;&nbsp;
             <li className="nav-item">
               <Link className="nav-link text-white" to="/tasks">Tasks</Link>
             </li> &nbsp;&nbsp;
@@ -30,17 +32,17 @@ const Header = ({ userPoints, userName, onLogout }) => {
             </li> &nbsp;&nbsp;
             {isLoggedIn && (
               <>
-              <li className="nav-item">
+                <li className="nav-item">
                   <span className="navbar-text text-white">
-                    Cuan : {userPoints}
-                  </span>
-                </li> &nbsp;&nbsp;
+                    $CUAN : {userPoints}
+                  </span> &nbsp;&nbsp;
+                </li>
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle text-white" href="#/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Welcome,{userName}!
+                    Welcome,{firstName}!
                   </a>
                   <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <Link className="dropdown-item" to="/profile">Profile</Link>
+                    <Link className="dropdown-item" to="/profile">Info</Link>
                     <div className="dropdown-divider"></div>
                     <button className="dropdown-item" onClick={handleLogout}>Logout</button>
                   </div>

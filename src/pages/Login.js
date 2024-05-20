@@ -19,8 +19,8 @@ const Login = ({ onLogin }) => {
     // Save user info to local storage
     localStorage.setItem('userEmail', email);
     // Call onLogin with user email (or username part before '@')
-    const userName = email.split('@')[0];
-    onLogin(userName);
+    const userNameEmail = email.split('@')[0];
+    onLogin(userNameEmail);
     navigate('/dashboard'); // Redirect to dashboard after login
   };
 
