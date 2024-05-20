@@ -1,13 +1,40 @@
-import React from 'react';
-import UserProfile from '../components/UserProfile';
+import React, { useEffect, useState } from 'react';
 
 const Profile = () => {
-  const user = { name: 'John Doe', email: 'john.doe@example.com', points: 150 };
+  const [userProfile, setUserProfile] = useState({ name: '', email: '' });
+
+  useEffect(() => {
+    const storedUserName = localStorage.getItem('userName');
+    const storedUserEmail = localStorage.getItem('userEmail');
+    if (storedUserName && storedUserEmail) {
+      setUserProfile({ name: storedUserName, email: storedUserEmail });
+    }
+  }, []);
 
   return (
     <div className="container mt-5">
-      <h1 className="mb-4">User Profile</h1>
-      <UserProfile user={user} />
+      <h1>Profile</h1>
+      <div className="mb-3">
+        <label htmlFor="profileName" className="form-label">Name</label>
+        <input
+          type="text"
+          className="form-control"
+          id="profileName"
+          value={userProfile.name}
+          readOnly
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="profileEmail" className="form-label">Email</label>
+        <input
+          type="email"
+          className="form-control"
+          id="profileEmail"
+          value={userProfile.email}
+          readOnly
+        />
+      </div>
+      {/* Add more profile details here */}
     </div>
   );
 };

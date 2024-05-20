@@ -1,45 +1,39 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SignUp = ({ setIsLoggedIn }) => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: ''
-  });
+const SignUp = ({ onLogin }) => {
+  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic
-    // After successful sign-up, set user as logged in and redirect to the dashboard
-    setIsLoggedIn(true);
-    navigate('/dashboard');
+    // Save user info to local storage
+    localStorage.setItem('userName', formData.name);
+    localStorage.setItem('userEmail', formData.email);
+    localStorage.setItem('userPoints', 150); // Example initial points
+    // Call onLogin with user name
+    onLogin(formData.name);
+    navigate('/dashboard'); // Redirect to dashboard after sign up
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="card p-4 shadow-lg" style={{ maxWidth: '500px', width: '100%' }}>
-        <h2 className="text-center mb-4">Join Cuan badass</h2>
-        <p className="text-center text-muted mb-4">
-          Sign up today and start earning rewards by completing simple tasks!
-        </p>
+    <div className="container d-flex align-items-center justify-content-center min-vh-100">
+      <div className="col-md-6">
+        <h1 className="mb-4">Join Cuan Badass</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="username" className="form-label">Username</label>
+            <label htmlFor="name" className="form-label">Name</label>
             <input 
               type="text" 
               className="form-control" 
-              id="username" 
-              name="username" 
-              value={formData.username}
+              id="name" 
+              name="name" 
+              value={formData.name}
               onChange={handleChange}
               required 
             />

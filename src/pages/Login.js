@@ -1,58 +1,57 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Login = ({ setIsLoggedIn }) => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
+const Login = ({ onLogin }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic
-    // After successful login, set user as logged in and redirect to the dashboard
-    setIsLoggedIn(true);
-    navigate('/dashboard');
+    // Save user info to local storage
+    localStorage.setItem('userEmail', email);
+    // Call onLogin with user email (or username part before '@')
+    const userName = email.split('@')[0];
+    onLogin(userName);
+    navigate('/dashboard'); // Redirect to dashboard after login
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="card p-4 shadow-lg" style={{ maxWidth: '500px', width: '100%' }}>
-        <h2 className="text-center mb-4">Welcome back, Friend!</h2>
+    <div className="container d-flex align-items-center justify-content-center min-vh-100">
+      <div className="col-md-6">
+        <h1 className="mb-4">Welcome back, Friend!</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">Email address</label>
-            <input 
-              type="email" 
-              className="form-control" 
-              id="email" 
-              name="email" 
-              value={formData.email}
-              onChange={handleChange}
-              required 
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+              required
             />
           </div>
           <div className="mb-3">
             <label htmlFor="password" className="form-label">Password</label>
-            <input 
-              type="password" 
-              className="form-control" 
-              id="password" 
-              name="password" 
-              value={formData.password}
-              onChange={handleChange}
-              required 
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100">Log In</button>
+          <button type="submit" className="btn btn-primary w-100">Login</button>
         </form>
         <div className="mt-4 text-center">
           <p className="text-muted">

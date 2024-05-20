@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Dashboard = () => {
+  const [userName, setUserName] = useState('');
+  const [userPoints, setUserPoints] = useState(0);
+
+  useEffect(() => {
+    const storedUserName = localStorage.getItem('userName');
+    const storedUserPoints = localStorage.getItem('userPoints') || 0; // Default to 0 if not found
+    if (storedUserName) {
+      setUserName(storedUserName);
+      setUserPoints(storedUserPoints);
+    }
+  }, []);
+
   return (
     <div className="container mt-5">
       <div className="row">
@@ -8,8 +20,8 @@ const Dashboard = () => {
           <div className="card shadow-sm">
             <div className="card-body text-center">
               <img src="https://od.lk/s/NjFfODI4MjEzNjhf/SmilingEmojiSunglasses.jpg" alt="Profile" className="img-fluid rounded-circle mb-3" />
-              <h5 className="card-title">Welcome, User!</h5>
-              <p className="card-text">Points: 150</p>
+              <h5 className="card-title">Welcome, {userName}!</h5>
+              <p className="card-text">Points: {userPoints}</p>
               <a href="#/profile" className="btn btn-primary btn-sm">View Profile</a>
             </div>
           </div>
