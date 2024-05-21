@@ -3,20 +3,20 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Header = ({ userPoints, userName, onLogout }) => {
   const navigate = useNavigate();
-  const infologgin = localStorage.getItem('userEmail');
-  const isLoggedIn = !!infologgin;
+  const userinfo = localStorage.getItem('userEmail');
+  const isLoggedIn = !!userinfo;
 
   const handleLogout = () => {
     onLogout();
     navigate('/badass'); // Redirect to landing page
   };
 
-  const firstName = userName ? userName.split(' ')[0] : '';
+  const firstName = userName.split(' ')[0];
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
-        <Link className="navbar-brand text-white" to={isLoggedIn ? "/dashboard" : "/badass"}>Your Cuan</Link>
+        <Link className="navbar-brand" to={isLoggedIn ? "/dashboard" : "/badass"}>Your Cuan</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

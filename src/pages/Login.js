@@ -18,6 +18,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     // Save user info to local storage
     localStorage.setItem('userEmail', email);
+    localStorage.setItem('userPoints', 500);
     // Call onLogin with user email (or username part before '@')
     const userNameEmail = email.split('@')[0];
     onLogin(userNameEmail);

@@ -20,6 +20,7 @@ const App = () => {
   const [userName, setUserName] = useState('');
   const [userFullName, setUserFullName] = useState('');
   const [userPoints, setUserPoints] = useState(500);
+  const userEmail2 = localStorage.getItem('userEmail');
 
   useEffect(() => {
     const storedUserFullName = localStorage.getItem('userFullName');
@@ -31,10 +32,10 @@ const App = () => {
     }
   }, []);
 
-  const handleLogin = (userName) => {
-    setUserName(userName);
+  const handleLogin = (userFullName) => {
+    setUserName(userFullName);
     setUserPoints(localStorage.getItem('userPoints') || 500);
-    localStorage.setItem('userName', userName); // Store the userName for future visits
+    localStorage.setItem('userFullName', userFullName); // Store the userName for future visits
   };
 
   const handleLogout = () => {
@@ -64,8 +65,8 @@ const App = () => {
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
             <Route path="/profile" element={<Profile userName={userFullName} />} />
             <Route path="/dashboard" element={<Dashboard userName={userName} />} />
-            <Route path="/badass" element={userName ? <Navigate to="/dashboard" /> : <LandingPage />} />
-            <Route path="/" element={userName ? <Navigate to="/dashboard" /> : <LandingPage />} />
+            <Route path="/badass" element={userEmail2 ? <Navigate to="/dashboard" /> : <LandingPage />} />
+            <Route path="/" element={userEmail2 ? <Navigate to="/dashboard" /> : <LandingPage />} />
           </Routes>
         </main>
         <Footer />

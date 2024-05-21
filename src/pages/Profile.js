@@ -4,7 +4,7 @@ const Profile = () => {
   const [userProfile, setUserProfile] = useState({ name: '', email: '' });
 
   useEffect(() => {
-    const storedUserName = localStorage.getItem('userName');
+    const storedUserName = localStorage.getItem('userFullName');
     const storedUserEmail = localStorage.getItem('userEmail');
     if (storedUserName && storedUserEmail) {
       setUserProfile({ name: storedUserName, email: storedUserEmail });
@@ -13,7 +13,7 @@ const Profile = () => {
 
   return (
     <div className="container mt-5">
-      <h1>Profile</h1>
+      <h1>My Profile</h1>
       <div className="mb-3">
         <label htmlFor="profileName" className="form-label">Name</label>
         <input
