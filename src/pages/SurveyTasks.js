@@ -11,7 +11,7 @@ const SurveyTasks = () => {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Pollfish</h5>
-              <p className="card-text">Complete surveys from PollFish and earn $CUAN.</p>
+              <p className="card-text">Complete surveys from Pollfish and earn $CUAN.</p>
               <Link to="/tasks/provider1" className="btn btn-primary">View Tasks</Link>
             </div>
           </div>
@@ -19,9 +19,9 @@ const SurveyTasks = () => {
         <div className="col-md-4 animate__animated animate__fadeInLeft animate__delay-1s">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Cpa Research</h5>
-              <p className="card-text">Complete surveys from Cpa Research and earn $CUAN.</p>
-              <Link to="/tasks/provider2" className="btn btn-primary">View Tasks</Link>
+              <h5 className="card-title">Cpx Research</h5>
+              <p className="card-text">Complete surveys from Cpx Research and earn $CUAN.</p>
+              <a href="#/cpx-research" className="btn btn-primary">View Tasks</a>
             </div>
           </div>
         </div>

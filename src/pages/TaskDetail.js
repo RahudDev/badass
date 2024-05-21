@@ -1,8 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 
 const TaskDetail = () => {
-  const { id } = useParams();
   const task = { title: 'Task Title', description: 'This is the detailed description of the task.', image: 'https://od.lk/s/NjFfODI4MTUwOTZf/person%20survey.jpeg' };
 
   return (

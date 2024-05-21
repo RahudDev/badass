@@ -12,18 +12,21 @@ import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import LandingPage from './pages/LandingPage';
 import SurveyTasks from './pages/SurveyTasks';
+import CpxResearch from './pages/CpxResearch';
+import Cpalead from './pages/Cpalead';
 import './App.css';
-import 'animate.css';
 
 const App = () => {
   const [userName, setUserName] = useState('');
+  const [userFullName, setUserFullName] = useState('');
   const [userPoints, setUserPoints] = useState(500);
 
   useEffect(() => {
-    const storedUserName = localStorage.getItem('userName');
+    const storedUserFullName = localStorage.getItem('userFullName');
     const storedUserPoints = localStorage.getItem('userPoints') || 500;
-    if (storedUserName) {
-      setUserName(storedUserName);
+    if (storedUserFullName) {
+      setUserFullName(storedUserFullName);
+      setUserName(storedUserFullName.split(' ')[0]);
       setUserPoints(storedUserPoints);
     }
   }, []);
@@ -35,10 +38,12 @@ const App = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('userName');
+    localStorage.removeItem('userFullName');
     localStorage.removeItem('userPoints');
+    localStorage.removeItem('userName');
     localStorage.removeItem('userEmail');
     setUserName('');
+    setUserFullName('');
     setUserPoints(0);
   };
 
@@ -53,9 +58,11 @@ const App = () => {
             <Route path="/tasks/:id" element={<TaskDetail />} />
             <Route path="/tasks" element={<Tasks />} />
             <Route path="/survey-tasks" element={<SurveyTasks />} />
+            <Route path="/cpx-research" element={<CpxResearch />} />
+            <Route path="/cpalead" element={<Cpalead />} />
             <Route path="/signup" element={<SignUp onLogin={handleLogin} />} />
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
-            <Route path="/profile" element={<Profile userName={userName} />} />
+            <Route path="/profile" element={<Profile userName={userFullName} />} />
             <Route path="/dashboard" element={<Dashboard userName={userName} />} />
             <Route path="/badass" element={userName ? <Navigate to="/dashboard" /> : <LandingPage />} />
             <Route path="/" element={userName ? <Navigate to="/dashboard" /> : <LandingPage />} />

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Task = ({ task }) => {
   return (
@@ -8,7 +7,7 @@ const Task = ({ task }) => {
       <div className="card-body">
         <h5 className="card-title">{task.title}</h5>
         <p className="card-text">{task.description}</p>
-        <Link to='/survey-tasks' className="btn btn-primary">View Task</Link>
+        <a href={task.href} className="btn btn-primary">View Task</a>
       </div>
     </div>
   );
