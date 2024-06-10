@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 const SignUp = ({ onLogin }) => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
@@ -12,10 +13,15 @@ const SignUp = ({ onLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Generate a unique user ID
+    const uniqueUserID = uuidv4();
+
     // Save user info to local storage
     localStorage.setItem('userFullName', formData.name);
     localStorage.setItem('userEmail', formData.email);
     localStorage.setItem('userPoints', 500); // Example initial points
+    localStorage.setItem('unique_user_id', uniqueUserID);
+
     // Extract first name and call onLogin with first name
     const firstName = formData.name.split(' ')[0];
     onLogin(firstName);

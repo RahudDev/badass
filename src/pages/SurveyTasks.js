@@ -12,7 +12,7 @@ const SurveyTasks = () => {
             <div className="card-body">
               <h5 className="card-title">Pollfish</h5>
               <p className="card-text">Complete surveys from Pollfish and earn $CUAN.</p>
-              <Link to="/tasks/provider1" className="btn btn-primary">View Tasks</Link>
+              <Link to="/pollfish" className="btn btn-primary">View Tasks</Link>
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@ const SurveyTasks = () => {
             <div className="card-body">
               <h5 className="card-title">Cpx Research</h5>
               <p className="card-text">Complete surveys from Cpx Research and earn $CUAN.</p>
-              <a href="#/cpx-research" className="btn btn-primary">View Tasks</a>
+              <Link to="/cpx-research" className="btn btn-primary">View Tasks</Link>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@ const SurveyTasks = () => {
             <div className="card-body">
               <h5 className="card-title">Bitlabs</h5>
               <p className="card-text">Complete surveys from Bitlabs and earn $CUAN.</p>
-              <Link to="/tasks/provider3" className="btn btn-primary">View Tasks</Link>
+              <Link to="/bitlabs" className="btn btn-primary">View Tasks</Link>
             </div>
           </div>
         </div>

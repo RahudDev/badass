@@ -14,6 +14,8 @@ import LandingPage from './pages/LandingPage';
 import SurveyTasks from './pages/SurveyTasks';
 import CpxResearch from './pages/CpxResearch';
 import Cpalead from './pages/Cpalead';
+import Bitlabs from './pages/Bitlabs';
+import PollfishSurvey from './pages/PollfishSurvey';
 import './App.css';
 
 const App = () => {
@@ -43,6 +45,7 @@ const App = () => {
     localStorage.removeItem('userPoints');
     localStorage.removeItem('userName');
     localStorage.removeItem('userEmail');
+    localStorage.removeItem('unique_user_id');
     setUserName('');
     setUserFullName('');
     setUserPoints(0);
@@ -60,6 +63,8 @@ const App = () => {
             <Route path="/tasks" element={<Tasks />} />
             <Route path="/survey-tasks" element={<SurveyTasks />} />
             <Route path="/cpx-research" element={<CpxResearch />} />
+            <Route path="/pollfish" element={<PollfishSurvey />} />
+            <Route path="/bitlabs" element={<Bitlabs />} />
             <Route path="/cpalead" element={<Cpalead />} />
             <Route path="/signup" element={<SignUp onLogin={handleLogin} />} />
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
