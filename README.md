@@ -1,4 +1,4 @@
-# GPT Site
+# GPT Site (under experiment)
 
 Welcome to Cuan - a platform where you can earn rewards by completing simple tasks!
 
